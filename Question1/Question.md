@@ -1,0 +1,2 @@
+### 1. (50 pts) Bi-directional Decimal-Double Converter
+Write a bi-directional decimal-double converter. Given a decimal, the program converts it to the double, and given a double, it converts it to the decimal. IEEE 754 must be followed. In addition to the converted values, the program is required to print out the sign bit, the unbiased exponent, and the mantissa, in binary, for every input. C is highly recommended. High-level programming languages such as Python and Java are NOT recommended. (Hint: Use `-00 -g3 -Ma11` if you use `gcc`.)

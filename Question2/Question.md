@@ -1,0 +1,2 @@
+### 2. (50 pts) Truncation Errors in Iterative Algorithm
+Write a program to demo the truncation errors of the iterative algorithm for computing the n^th power of the golden ratio (i.e., φ = (1 + √(5))/2, compute φ^n). Try both `double` and `float`, and compare the respective n's at which you observe the errors. Plot the errors in figures as demonstrated in class. C is highly recommended for the iterative algorithm. Python can be used for plotting.
