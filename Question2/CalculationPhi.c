@@ -128,13 +128,13 @@ int main()
         float delta_phi_float = fabsf(straightforward_phi_float - iterative_phi_float);
 
         // Output
-        printf("\n%ith power\n", i);
-        printf("Straightforward_double: %lf\n", straightforward_phi_double);
-        printf("Straightforward_float: %f\n", straightforward_phi_float);
-        printf("Iterative_double: %lf\n", iterative_phi_double);
-        printf("Iterative_float: %f\n", iterative_phi_float);
-        printf("Delta phi_double: %lf\n", delta_phi_double);
-        printf("Delta phi_float: %f\n", delta_phi_float);
+        // printf("\n%ith power\n", i);
+        // printf("Straightforward_double: %lf\n", straightforward_phi_double);
+        // printf("Straightforward_float: %f\n", straightforward_phi_float);
+        // printf("Iterative_double: %lf\n", iterative_phi_double);
+        // printf("Iterative_float: %f\n", iterative_phi_float);
+        // printf("Delta phi_double: %lf\n", delta_phi_double);
+        // printf("Delta phi_float: %f\n", delta_phi_float);
 
         // Saving to csv
         fprintf(
@@ -170,6 +170,6 @@ int main()
 }
 
 /*
-gcc PhiCalculation.c -o PhiCalculation -lm
-./PhiCalculation
+gcc CalculationPhi.c -o CalculationPhi -lm
+./CalculationPhi
 */
