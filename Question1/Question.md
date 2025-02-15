@@ -14,7 +14,7 @@ If the input is a decimal number, the program first converts it into a double . 
 
 If the input is an IEEE 754 binary string (64-bit), the program first extracts the sign bit, exponent, and mantissa from the binary string. The exponent is decoded by subtracting the bias of 1023 from its value. The mantissa is interpreted by adding an implicit leading 1 to the fraction and then converting the binary fraction into its decimal equivalent. Finally, the program calculates the decimal value using the formula:
 
-Decimal Value = (-1)^{\text{sign}} \times \text{mantissa} \times 2^{\text{exponent} - 1023}
+$$ \text{Decimal Value} = (-1)^{\text{sign}} \times \text{mantissa} \times 2^{\text{exponent} - 1023} $$
 
 This decimal value is then printed along with the readable IEEE 754 binary.
 
