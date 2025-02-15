@@ -11,10 +11,6 @@ except ModuleNotFoundError as e:
     sys.exit(1)
 
 
-def exponential_reg(a, b):
-    pass
-
-
 def main(n):
     try:
         filename = f"calculating_{n}th_phi.csv"
@@ -25,40 +21,23 @@ def main(n):
 
         plt.figure(figsize=(10, 6))
 
-        # Delta between each respective type i.e. straightforward_double - iterative_double = delta_double
+        # Delta
         plt.plot(
             data["n"],
-            data["Delta_double"],
-            label="Delta (double)",
-        )
-        plt.plot(
-            data["n"],
-            data["Delta_float"],
-            label="Delta (float)",
+            data["Delta"],
+            label="Delta",
         )
 
-        # # Actual values of φ^n (float)
-        # plt.plot(
-        #     data["n"],
-        #     data["Straightforward_float"],
-        #     label="straight float",
-        # )
         # plt.plot(
         #     data["n"],
         #     data["Iterative_float"],
-        #     label="iterative",
+        #     label="Iterative (float)",
         # )
 
-        # # Actual values of φ^n (double)
-        # plt.plot(
-        #     data["n"],
-        #     data["Straightforward_double"],
-        #     label="straight double",
-        # )
         # plt.plot(
         #     data["n"],
         #     data["Iterative_double"],
-        #     label="iterative double",
+        #     label="Iterative (double)",
         # )
 
         plt.xlabel("n")

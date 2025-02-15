@@ -12,12 +12,6 @@ Formula:
 */
 
 // Double Bellow
-double straightforward_double(double phi, int n)
-{
-    double result = pow(phi, n);
-    return result;
-}
-
 double iterative_double(double phi, int n)
 {
     double phi_n_minus_2 = 1.0;
@@ -30,14 +24,6 @@ double iterative_double(double phi, int n)
         phi_n_minus_2 = phi_n_minus_1;
         phi_n_minus_1 = result;
     }
-
-    return result;
-}
-
-// Float bellow
-float straightforward_float(float phi, int n)
-{
-    float result = pow(phi, n);
 
     return result;
 }
@@ -111,42 +97,27 @@ int main()
         return 1;
     }
 
-    fprintf(file_pointer, "n,Straightforward_double,Iterative_double,Delta_double,Straightforward_float,Iterative_float,Delta_float\n");
+    fprintf(file_pointer, "n,Iterative_double,Iterative_float,Delta\n");
 
     for (int i = 2; i <= nth_term; i++)
     {
         // Double
-        double straightforward_phi_double = straightforward_double(phi_double, i);
         double iterative_phi_double = iterative_double(phi_double, i);
 
-        double delta_phi_double = fabs(straightforward_phi_double - iterative_phi_double);
-
         // Float
-        float straightforward_phi_float = straightforward_float(phi_float, i);
         float iterative_phi_float = iterative_float(phi_float, i);
 
-        float delta_phi_float = fabsf(straightforward_phi_float - iterative_phi_float);
+        double delta_phi = fabs(iterative_phi_double - iterative_phi_float);
 
-        // Output
-        // printf("\n%ith power\n", i);
-        // printf("Straightforward_double: %lf\n", straightforward_phi_double);
-        // printf("Straightforward_float: %f\n", straightforward_phi_float);
-        // printf("Iterative_double: %lf\n", iterative_phi_double);
-        // printf("Iterative_float: %f\n", iterative_phi_float);
-        // printf("Delta phi_double: %lf\n", delta_phi_double);
-        // printf("Delta phi_float: %f\n", delta_phi_float);
 
         // Saving to csv
         fprintf(
             file_pointer,
-            "%d,%lf,%lf,%lf,%f,%f,%f\n",
+            "%d,%lf,%f,%lf\n",
             i,
-            straightforward_phi_double,
             iterative_phi_double,
-            delta_phi_double,
-            straightforward_phi_float,
             iterative_phi_float,
-            delta_phi_float);
+            delta_phi);
     }
 
     fclose(file_pointer);
@@ -170,6 +141,5 @@ int main()
 }
 
 /*
-gcc CalculationPhi.c -o CalculationPhi -lm
-./CalculationPhi
+gcc CalculationPhi.c -o CalculationPhi -lm && ./CalculationPhi
 */
